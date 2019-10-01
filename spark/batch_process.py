@@ -8,7 +8,6 @@ from pyspark import SparkContext as sc
 import json
 import pyspark
 from pyspark.sql.functions import *
-import org.apache.spark.sql.expressions._
 from pyspark.sql.window import Window
 from pyspark.sql.functions import lag
 
