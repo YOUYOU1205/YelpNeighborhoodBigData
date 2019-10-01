@@ -1,4 +1,4 @@
-# Neigborhood Atmosphere
+# Liverrific  A taste for live
 ## Project description
 ## Data
 * [Yelp Dataset]( https://www.yelp.com/dataset/challenge)
