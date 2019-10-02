@@ -1,0 +1,20 @@
+.
+├── README.md
+├── airflow
+│   └── data_airflow.py
+├── database-scripts
+│   └── database.sql
+├── docs
+│   ├── Airflow_Install.md
+│   └── data_pipline.png
+├── my.config
+├── setup
+│   ├── README.md
+│   ├── airflow.sh
+│   └── setup.sh
+├── spark
+│   ├── batch_process.py
+│   └── test.py
+└── tree.txt
+
+5 directories, 12 files
