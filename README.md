@@ -19,7 +19,6 @@
 └── tree.txt
 
 5 directories, 11 files
-```bash
 
 ## Project description
 ## Data
