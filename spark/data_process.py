@@ -13,10 +13,14 @@ from pyspark.sql.functions import lag
 
 
 def get_username(config):
+    """get username
+    """
     return config.get('properties', 'username')
 
 
 def get_password(config):
+    """ get password
+    """
     return config.get('properties', 'password')
 
 
@@ -45,7 +49,8 @@ def ReadJSONAndRegBiznsTable(file_path, spark):
 
 
 def WriteCategoryTbl(spark, table_name, rds_url, result):
-    # write to postgres database
+    """ write to postgres database
+    """
     mode = "overwrite"
     config = configparser.ConfigParser()
     config.read("/home/ubuntu/s3/myConfig.config")
@@ -90,6 +95,9 @@ def ReadJSONAndRegLagTable(file_path, spark):
 
 
 def ReadRestaurantFileInTempView(csv_path, spark):
+    """
+    read health nightly updated data from NV restaurant inspection
+    """
     health_df = spark.read.format("csv").options(header="true", inferSchema="true", delimiter=";")\
         .load(csv_path)
     health_df.createOrReplaceTempView("restaurant")
@@ -97,6 +105,9 @@ def ReadRestaurantFileInTempView(csv_path, spark):
 
 
 def ReadBusinessInNVToTempView(file_path, spark):
+    """
+    read business data in NV
+    """
     # Business_data = spark.read.json("/FileStore/tables/business.json")
     Business_data = spark.read.json(file_path)
     business_name = Business_data.select(Business_data.name, Business_data.business_id, Business_data.city,
