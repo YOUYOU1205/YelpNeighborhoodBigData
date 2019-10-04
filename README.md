@@ -21,7 +21,7 @@
 5 directories, 11 files
 ```
 ## Project description
-  Build a tree map to help homebuyers/renters find the most suitable neighborhood to live in by using Business Data in NV including bars, restaurants numbers, salson services numbers and average review ratings from Yelp and health inspections from  public health website.
+  Build a tree map to help homebuyers/renters find the most suitable neighborhood to live in by using Business Data in NV including bars, restaurants numbers, salson services numbers, average review ratings from Yelp and health inspections data from  public health website.
 ## Data
 * [Yelp Dataset]( https://www.yelp.com/dataset/challenge)
 * [Nevada Public Restaurants Inspection (Nightly Updated)](https://www.southernnevadahealthdistrict.org/permits-and-regulations/restaurant-inspections/developers/)
