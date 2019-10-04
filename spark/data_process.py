@@ -85,7 +85,7 @@ def ReadJSONAndRegLagTable(file_path, spark):
         'lag_in_hour', (unix_timestamp('date') - unix_timestamp('lastcheck'))/150)
     lag_in_hour.registerTempTable("lag")
     result = spark.sql("SELECT lower(city) as city,lower(state) as state,lower(postal_code) as postal_code,avg(lag_in_hour) as avg_hour FROM business a join lag b \
-    on a.business_id = b.business_id where state='AZ' group by 1,2,3")
+    on a.business_id = b.business_id group by 1,2,3")
     return result
 
 

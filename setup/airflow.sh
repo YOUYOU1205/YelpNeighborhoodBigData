@@ -1,3 +1,7 @@
+# start up
+airflow webserver -p 8081
+airflow scheduler
+# test dag
 python ~/airflow/dags/data_airflow.py
 # print the list of active DAGs
 airflow list_dags
