@@ -17,11 +17,25 @@ def get_username(config):
     """
     return config.get('properties', 'username')
 
+def get_business(config):
+    """get business file from hdfs
+    """
+    return config.get('hdfsfile', 'business')
+
+def get_checkin(config):
+    """get checkin file from hdfs
+    """
+    return config.get('hdfsfile', 'checkin')
 
 def get_password(config):
     """ get password
     """
     return config.get('properties', 'password')
+def get_rds(config):
+    """ get jdbc rds url
+    """
+    return config.get('jdbc', 'rdsurl')
+
 
 
 def ReadJSONAndRegBiznsTable(file_path, spark):
@@ -132,11 +146,11 @@ if __name__ == "__main__":
         .appName("Neighbourhood analysis") \
         .getOrCreate()
     # read business json file from HDFS
-    file_path = "hdfs://ec2-35-160-13-109.us-west-2.compute.amazonaws.com:9000/user/business.json"
+    file_path = get_business(config)
     business_agg = ReadJSONAndRegBiznsTable(file_path, spark)
 
     # read check-in json file from HDFS
-    file_path = "hdfs://ec2-35-160-13-109.us-west-2.compute.amazonaws.com:9000/user/checkin.json"
+    file_path = get_checkin(config)
     # use spark session to create avg check-in interval in hours per business
     # join business location data and get avg check in interval per city per post per state
     avg_checkin = ReadJSONAndRegLagTable(file_path, spark)
@@ -145,9 +159,9 @@ if __name__ == "__main__":
     # read nightly restaurant health inspection data to table restaurant_inspection
     health_grade = ReadRestaurantFileInTempView(sys.argv[1], spark)
     # join business in NV to compare Reviews Rates and Health Inspection Rates
-    file_path = "hdfs://ec2-35-160-13-109.us-west-2.compute.amazonaws.com:9000/user/business.json"
+    file_path = get_business(config)
     grade_review = ReadBusinessInNVToTempView(file_path, spark)
-    rds_url = "jdbc:postgresql://rds-postgresql-yelp.culiy2jimxsn.us-west-2.rds.amazonaws.com:5432/carrieliuDatabase"
+    rds_url = get_rds(config)
     # write 4 tables to Postgres Database
     WriteCategoryTbl(spark, "public.business_agg", rds_url, business_agg)
     WriteCategoryTbl(spark, "public.avg_checkin", rds_url, avg_checkin)

@@ -13,6 +13,8 @@ CREATE TABLE public.business_agg
 );
 
 
+
+
 -- ----------------------------
 --  Table structure for `restaurant_establishments` , source: NV restaurant inspection
 -- ----------------------------
@@ -49,3 +51,4 @@ CREATE TABLE IF NOT EXISTS `restaurant_establishments` (
   KEY `current_grade` (`current_grade`),
   KEY `current_demerits` (`current_demerits`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
