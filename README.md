@@ -28,4 +28,4 @@
 ## Data Pipelines
 ![alt text](https://github.com/YOUYOU1205/YelpNeighborhoodBigData/blob/master/docs/data_pipline.png)
 
-## [Tableau Live Dashboard] (https://public.tableau.com/profile/carrie.liu#!/vizhome/business_Category/BusinessRatingsinUnitedStates?publish=yes)
+## [Tableau Live Dashboard](https://public.tableau.com/profile/carrie.liu#!/vizhome/business_Category/BusinessRatingsinUnitedStates?publish=yes)
