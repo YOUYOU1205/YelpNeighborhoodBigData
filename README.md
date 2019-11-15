@@ -27,5 +27,5 @@
 * [Nevada Public Restaurants Inspection (Nightly Updated)](https://www.southernnevadahealthdistrict.org/permits-and-regulations/restaurant-inspections/developers/)
 ## Data Pipelines
 ![alt text](https://github.com/YOUYOU1205/YelpNeighborhoodBigData/blob/master/docs/data_pipline.png)
-
+## [Presentation](https://docs.google.com/presentation/d/1C_Ha0p8UNBicNgH8PRNr1ngIRTo2BEkW/edit#slide=id.p1)
 ## [Tableau Live Dashboard](https://public.tableau.com/profile/carrie.liu#!/vizhome/business_Category/BusinessRatingsinUnitedStates?publish=yes)
